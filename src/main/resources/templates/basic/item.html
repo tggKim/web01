@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>아이템 상세정보</title>
+</head>
+<body>
+    <h1>아이템 상세정보</h1>
+    <form>
+        <p>Id</p>
+        <input type="text" th:value="${item.id}" readonly><br>
+        <p>이름</p>
+        <input type="text" th:value="${item.itemName}" readonly><br>
+        <p>가격</p>
+        <input type="text" th:value="${item.price}" readonly><br>
+        <p>수량</p>
+        <input type="text" th:value="${item.quantity}" readonly><br>
+    </form>
+    <input th:onclick="|location.href='@{/basic/items/{itemId}/edit(itemId=${item.id})}'|" type="button" value="수정하기">
+    <input th:onclick="|location.href='@{/basic/items}'|" type="button" value="목록으로">
+    <input th:onclick="|location.href='@{/basic/items/delete/{itemId}(itemId=${item.id})}'|" type="button" value="삭제하기">
+</body>
+</html>

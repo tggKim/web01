@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>아이템 정보수정</title>
+</head>
+<body>
+    <h1>아이템 정보수정</h1>
+    <form th:action="@{/basic/items/{itemId}/edit(itemId=${item.Id})}" method="post">
+        <p>Id</p>
+        <input type="text" th:value="${item.id}" readonly><br>
+        <p>이름</p>
+        <input type="text" th:value="${item.itemName}" name="itemName"><br>
+        <p>가격</p>
+        <input type="text" th:value="${item.price}" name="price"><br>
+        <p>수량</p>
+        <input type="text" th:value="${item.quantity}" name="quantity"><br>
+        <br>
+        <input type="submit" value="수정하기">
+    </form>
+</body>
+</html>
